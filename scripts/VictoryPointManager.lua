@@ -135,6 +135,7 @@ function VictoryPointManager:addPalletFactors(category, factorData, farmId)
 end
 
 function VictoryPointManager:addAnimalFactors(category, factorData, farmId)
+	print("add addAnimalFactors")
 	local maxNumberOfAnimals = g_ruleManager:getGeneralRuleValue("maxNumberOfAnimals")
 	local numberOfAnimals = VictoryPointsUtil.getAnimalAmount(farmId, maxNumberOfAnimals)
 	VictoryPointsUtil.addAnimalTypeFactors(numberOfAnimals, category, factorData)
@@ -252,8 +253,16 @@ function VictoryPointManager:updateVictoryPoint(categoryName, pointName, factor)
 	end
 end
 
-function VictoryPointManager:getList(farmId)
-	return farmId ~= nil and self.pointList[farmId] or self.fillTypePointList
+function VictoryPointManager:getList(detailed, farmId)
+	if farmId ~= nil then
+		return self.pointList[farmId]
+	end
+
+	if detailed then
+		return self.staticPointList
+	else
+		return self.fillTypePointList
+	end
 end
 
 function VictoryPointManager:getListByName()
