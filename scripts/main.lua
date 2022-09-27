@@ -4,7 +4,7 @@ ChallengeMod = {
 	BASE_DIRECTORY = g_currentModDirectory,
 	baseXmlKey = "ChallengeMod",
 	configFileName = "ChallengeModConfig.xml",
-	isDevelopmentVersion = true
+	isDevelopmentVersion = false
 }
 
 ChallengeMod.image = {
