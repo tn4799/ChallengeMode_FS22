@@ -8,4 +8,5 @@ ZIP_NAME="FS22_ChallengeMode.zip"
 FILES_TO_ZIP="modDesc.xml ChallengeModConfig.xml Icon_ChallengeMode.dds events/* gui/* gui/dialogs/* scripts/* translations/*"
 
 zip "$ZIP_NAME" "$FILES_TO_ZIP"
-mv "$ZIP_NAME" ..
+#mv "$ZIP_NAME" ..
+echo
